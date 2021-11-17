@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Details Page";
+}
+
+@model Besitzer
+<div class="container p-3 my-3 border">
+    <h1 class="display-4">Details Besitzer</h1>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Vorname)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Vorname)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nachname)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Nachname)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Strasse)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Strasse)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Ort)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Ort)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PLZ)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PLZ)</dd>
+    </dl>
+
+    <div>
+        <a class=" = btn btn-danger" asp-action="Index">Zurück</a>
+    </div>
+</div>

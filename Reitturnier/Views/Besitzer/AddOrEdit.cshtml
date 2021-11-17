@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = ViewBag.PageName;
+}
+
+@model Besitzer
+<div class="container p-3 my-3 border">
+    <h1 class="display-4">@ViewBag.PageName</h1>
+    <hr />
+    <form asp-action="AddOrEdit">
+        @if (@ViewBag.IsEdit)
+        {
+        <input type="hidden" asp-for="Rowguid" />
+        }
+
+        <div class="form-group">
+            <label asp-for="Vorname" class="custom-control-label"></label>
+            <input asp-for="Vorname" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Nachname" class="custom-control-label"></label>
+            <input asp-for="Nachname" class="form-control" />
+        </div>
+        <div class="form-group">
+
+            <label asp-for="Strasse" class="custom-control-label"></label>
+            <input asp-for="Strasse" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Ort" class="custom-control-label"></label>
+            <input asp-for="Ort" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="PLZ" class="custom-control-label"></label>
+            <input asp-for="PLZ" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input class="btn btn-primary" type="submit" value="Speichern" />
+            <a class=" = btn btn-danger" asp-action="Index">Zurück</a>
+        </div>
+    </form>
+</div>

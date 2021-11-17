@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Löschen Page";
+}
+
+@model Besitzer
+<div class="container p-3 my-3 border">
+    <h1 class="display-4">Löschen Besitzer</h1>
+    <h2>Wollen Sie wirklich löschen?</h2>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Vorname)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Vorname)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nachname)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Nachname)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Strasse)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Strasse)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Ort)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Ort)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PLZ)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PLZ)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Rowguid" />
+        <input class="btn-primary" type="submit" value="Ja" />
+        <a class=" = btn btn-danger" asp-action="Index">Zurück</a>
+    </form>
+</div>

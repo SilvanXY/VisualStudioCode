@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Besitzer Page";
+}
+
+@model IEnumerable<Besitzer>
+<div class="text-center">
+    <h1 class="display-4">Verwalten Besitzer</h1>
+    <div style="text-align:right; margin-right:100px;">
+        <a asp-action="AddOrEdit" class="btn btn-outline-primary">Hinzufügen</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Vorname)</th>
+                    <th>@Html.DisplayNameFor(model => model.Nachname)</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var besitzer in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => besitzer.Vorname)</td>
+                        <td>@Html.DisplayFor(modelItem => besitzer.Nachname)</td>
+                        <td><a asp-action="Details" class="btn btn-outline-info" asp-route-rowguid="@besitzer.Rowguid">Anzeigen</a></td>
+                        <td><a asp-action="AddOrEdit" class="btn btn-outline-primary" asp-route-rowguid="@besitzer.Rowguid">Bearbeiten</a></td>
+                        <td><a asp-action="Delete" class="btn btn-outline-danger" asp-route-rowguid="@besitzer.Rowguid">Löschen</a></td>
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
